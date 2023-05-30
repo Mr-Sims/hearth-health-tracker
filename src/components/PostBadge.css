@@ -1,0 +1,31 @@
+.post {
+    margin: 1rem 0;
+    padding: 1rem;
+    /* background-color: #cb5c5c; */
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.low {
+    background-color: blue;
+}
+
+.normal {
+    background-color: green;
+}
+
+.elevated {
+    background-color: rgb(173, 172, 69);
+}
+
+.hypertensionOne {
+    background-color: orange;
+}
+
+.hypertensionTwo {
+    background-color:red;
+}
+
+.crisis {
+    background-color: rgb(124, 0, 0);
+}
