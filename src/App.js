@@ -1,9 +1,9 @@
 import './App.css';
-import PostList from './components/PostList';
+import Posts from './components/Posts/Posts';
 
 function App() {
 	return (
-		<PostList />
+		<Posts />
   );
 }
 
