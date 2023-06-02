@@ -1,10 +1,11 @@
-.post {
-    margin: 1rem 0;
-    padding: 1rem;
-    /* background-color: #cb5c5c; */
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+.dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin:auto;
 }
+
 
 .low {
     background-color: blue;

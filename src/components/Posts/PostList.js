@@ -12,6 +12,7 @@ const PostList = ({posts}) => {
         <ul className={classes.list}>
             {posts.map(p => ( 
                     <PostBadge
+                        onClick={() => console.log('clicked')}
                         key={p.id}
                         systolic={p.systolic}
                         diastolic={p.diastolic}

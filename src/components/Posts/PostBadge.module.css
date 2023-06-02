@@ -1,0 +1,23 @@
+.post {
+    /* margin: 1rem 0;
+    padding: 1rem;
+    */
+    background-color: #e7dada;
+    
+    opacity: 0.9;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    /* background-color: #4b4b4b; */
+}
+
+.post:hover {
+    /* background-color: #dbb6b6; */
+    opacity: 0.96;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

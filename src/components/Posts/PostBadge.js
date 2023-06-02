@@ -1,30 +1,23 @@
 import conditionChecker from '../../utils/conditionChecker';
-import './PostBadge.css';
+import classes from './PostBadge.module.css';
+import PostDateTime from './PostDateTime';
+import StatusPointer from './StatusPointer';
 
 
-const PostBadge = ({systolic, diastolic, pulse, date, time}) => {
+const PostBadge = ({systolic, diastolic, pulse, date, time, onClick}) => {
 
     let color = conditionChecker(systolic, diastolic)
     console.log(color)
 
-
-
-    const postYear = new Date(date).getFullYear();
-    const postMonth = new Date(date).toLocaleString('en-US', { month: 'short' });
-    const postDay = new Date(date).toLocaleString('en-US', { day: '2-digit' });
-
+    
     return (
-            <li className={`post ${color}`}>
+            <li className={classes.post} onClick={onClick}>
                 <div>
-                    <p>Systolic {systolic} / Diastolic {diastolic}</p>
-                    <p>Pulse - {pulse} beats per minute</p>
+                    <p>{systolic} / {diastolic}</p>
+                    <p>{pulse} bpm</p>
                 </div>
-                <div>
-                    <p>Measurements taken on:</p>
-                    <p>Date: {postDay} {postMonth} {postYear}</p>
-                    <p>Time: {time}</p>
-                </div>
-                
+                <PostDateTime time={time} date={date}/>
+                <StatusPointer systolic={systolic} diastolic={diastolic}/>
             </li>
     );
 }

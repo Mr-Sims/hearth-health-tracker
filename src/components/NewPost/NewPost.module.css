@@ -1,0 +1,28 @@
+.new {
+    /* margin-top: 20px; */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    background-color: antiquewhite;
+    opacity: 0.9;
+}
+
+.new button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgb(179, 31, 31);
+    color: antiquewhite;
+    border-radius: 4px;
+    border: none;
+    margin: 10px 15px;
+}
+
+.new button:hover,
+.new button:active {
+    background-color: rgb(193, 92, 92);
+    opacity: 1;
+}

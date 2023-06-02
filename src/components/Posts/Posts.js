@@ -1,6 +1,7 @@
 import NewPost from "../NewPost/NewPost";
 import PostList from "./PostList";
 import { useState } from "react";
+import classes from './Posts.module.css'
 
 const DUMMY_POSTS = [
     {
@@ -8,7 +9,7 @@ const DUMMY_POSTS = [
         systolic: 118,
         diastolic: 75,
         pulse: 55,
-        date: new Date(),
+        date: new Date(2023, 0, 1),
         time: '18:35',
         feel: 'I feel fine!'
     },
@@ -17,7 +18,7 @@ const DUMMY_POSTS = [
         systolic: 150,
         diastolic: 90,
         pulse: 90,
-        date: new Date(),
+        date: new Date(2022, 0, 5),
         time: '18:35',
         feel: 'I feel stressed.'
     },
@@ -51,10 +52,10 @@ const Posts = () => {
     } 
 
     return (
-        <>
+        <div className={classes.posts}>
             <NewPost  onAddPost={addPostHandler}/>
             <PostList posts={posts} />
-        </>
+        </div>
     );
 }
 
