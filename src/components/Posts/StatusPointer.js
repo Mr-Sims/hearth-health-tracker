@@ -5,7 +5,7 @@ import './StatusPointer.css';
 const StatusPointer = ({ systolic, diastolic }) => {
 
     let color = conditionChecker(systolic, diastolic)
-    console.log(color)
+    // console.log(color)
 
     return (
         <div className={`dot ${color}`} />

@@ -49,12 +49,14 @@ const Posts = () => {
     const addPostHandler = (data) => {
         setPosts(state => [data, ...state]);
         // console.log(data)
-    } 
+    }
 
     return (
         <div className={classes.posts}>
-            <NewPost  onAddPost={addPostHandler}/>
-            <PostList posts={posts} />
+            <NewPost onAddPost={addPostHandler} />
+            {posts.length === 0 ?
+                <p>No posts yet!</p> :
+                <PostList posts={posts} />}
         </div>
     );
 }

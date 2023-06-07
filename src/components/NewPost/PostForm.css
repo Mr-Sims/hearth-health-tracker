@@ -12,6 +12,10 @@
     display: block;
 }
 
+.control.invalid label {
+    color: red;
+}
+
 .control input {
     font: inherit;
     padding: 0.5rem;
@@ -19,6 +23,12 @@
     border: 1px solid #ccc;
     width: 20rem;
     max-width: 100%;
+}
+
+.control.invalid input,
+.control.invalid textarea {
+    background-color: salmon;
+    border-color: red;
 }
 
 .control textarea {
@@ -29,6 +39,8 @@
     width: 20rem;
     max-width: 100%;
 }
+
+
 
 .actions {
     text-align: right;

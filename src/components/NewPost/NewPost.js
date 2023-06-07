@@ -7,7 +7,6 @@ const NewPost = ({ onAddPost }) => {
 
     const toggleForm = () => {
         setIsEditing(state => !state);
-        console.log('click')
     }
 
     const addPostHandler = (data) => {
