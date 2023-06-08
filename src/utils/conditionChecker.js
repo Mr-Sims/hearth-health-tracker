@@ -12,7 +12,7 @@ const conditionChecker = (systolic, diastolic) => {
     } else if ((systolic >= 120 && systolic < 129) &&  diastolic > 80) {
         condition = 'elevated';
 
-    } else if ((systolic > 90 && systolic < 120) && (diastolic > 60 && diastolic < 80)) {
+    } else if ((systolic > 90 && systolic <= 120) && (diastolic > 60 && diastolic <= 80)) {
         condition = 'normal';
 
     } else if (systolic <= 90 && diastolic <= 60) {

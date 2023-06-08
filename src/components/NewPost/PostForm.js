@@ -145,10 +145,11 @@ const PostForm = ({ onCancel, onAddPost }) => {
                 <div className={`${classes.control} ${!systolicIsValid && classes.invalid}`}>
                     <label htmlFor="systolic">Systolic</label>
                     <input
-
-                        type="text"
+                        type="number"
                         id="systolic"
                         name="systolic"
+                        min="60"
+                        max="200"
                         placeholder="Write your systolic measurement"
                         value={systolic}
                         onChange={systolicInputChangeHandler}
@@ -158,9 +159,11 @@ const PostForm = ({ onCancel, onAddPost }) => {
                 <div className={`${classes.control} ${!diastolicIsValid && classes.invalid}`}>
                     <label htmlFor="diastolic">Diastolic</label>
                     <input
-                        type="text"
+                        type="number"
                         id="diastolic"
                         name="diastolic"
+                        min="40"
+                        max="120"
                         placeholder="Write your diastolic measurement"
                         value={diastolic}
                         onChange={diastolicInputChangeHandler}
@@ -170,9 +173,11 @@ const PostForm = ({ onCancel, onAddPost }) => {
                 <div className={`${classes.control} ${!pulseIsValid && classes.invalid}`}>
                     <label htmlFor="pulse">Pulse</label>
                     <input
-                        type="text"
+                        type="number"
                         id="pulse"
                         name="pulse"
+                        min="30"
+                        max="200"
                         placeholder="Write your pulse measurement"
                         value={pulse}
                         onChange={pulseInputChangeHandler}
