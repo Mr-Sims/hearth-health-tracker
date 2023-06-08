@@ -9,7 +9,7 @@
     background-color: antiquewhite;
     opacity: 0.9;
 }
-
+/* 
 .new button {
     padding: 10px 20px;
     font-size: 15px;
@@ -25,4 +25,5 @@
 .new button:active {
     background-color: rgb(193, 92, 92);
     opacity: 1;
-}
+    cursor: pointer;
+} */

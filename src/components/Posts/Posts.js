@@ -1,7 +1,8 @@
 import NewPost from "../NewPost/NewPost";
 import PostList from "./PostList";
 import { useState } from "react";
-import classes from './Posts.module.css'
+import classes from './Posts.module.css';
+import Card from "../UI/Card";
 
 const DUMMY_POSTS = [
     {
@@ -48,16 +49,15 @@ const Posts = () => {
 
     const addPostHandler = (data) => {
         setPosts(state => [data, ...state]);
-        // console.log(data)
     }
 
     return (
-        <div className={classes.posts}>
+        <Card className={classes.posts}>
             <NewPost onAddPost={addPostHandler} />
             {posts.length === 0 ?
                 <p>No posts yet!</p> :
                 <PostList posts={posts} />}
-        </div>
+        </Card>
     );
 }
 

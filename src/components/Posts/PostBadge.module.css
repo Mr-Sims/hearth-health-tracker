@@ -21,3 +21,8 @@
     opacity: 0.96;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+.post p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}

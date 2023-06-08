@@ -1,0 +1,55 @@
+.chart-bar {
+    height: 6rem;
+    width: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1.5rem;
+  }
+  
+  .chart-bar__inner {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #313131;
+    border-radius: 12px;
+    background-color: #f3b4d0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .chart-bar__fill {
+    width: 100%;
+  }
+
+  
+  .low {
+    height: 15%;
+    background-color: blue;
+}
+
+.normal {
+    height: 25%;
+    background-color: green;
+}
+
+.elevated {
+    height: 35%;
+    background-color: rgb(238, 238, 0);
+}
+
+.hypertensionOne {
+    height: 55%;
+    background-color: orange;
+}
+
+.hypertensionTwo {
+    height: 75%;
+    background-color:red;
+}
+
+.crisis {
+    height: 95%;
+    background-color: rgb(124, 0, 0);
+}

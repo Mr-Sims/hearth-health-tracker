@@ -16,21 +16,7 @@
     color: red;
 }
 
-.control input {
-    font: inherit;
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 20rem;
-    max-width: 100%;
-}
-
-.control.invalid input,
-.control.invalid textarea {
-    background-color: salmon;
-    border-color: red;
-}
-
+.control input,
 .control textarea {
     font: inherit;
     padding: 0.5rem;
@@ -40,6 +26,16 @@
     max-width: 100%;
 }
 
+.control input:focus,
+.control textarea:focus {
+    background-color: transparent;
+}
+
+.control.invalid input,
+.control.invalid textarea {
+    background-color: salmon;
+    border-color: red;
+}
 
 
 .actions {

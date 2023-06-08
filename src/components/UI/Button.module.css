@@ -1,0 +1,17 @@
+button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgb(179, 31, 31);
+    color: antiquewhite;
+    border-radius: 4px;
+    border: none;
+    margin: 10px 15px;
+}
+
+button:hover,
+button:active {
+    background-color: rgb(193, 92, 92);
+    opacity: 1;
+    cursor: pointer;
+}

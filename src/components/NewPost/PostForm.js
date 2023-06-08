@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./PostForm.css";
+import classes from "./PostForm.module.css";
 
 
 const PostForm = ({ onCancel, onAddPost }) => {
@@ -41,8 +41,8 @@ const PostForm = ({ onCancel, onAddPost }) => {
     }
     const systolicBlurChangeHandler = () => {
         if (systolic.trim().length === 0) {
-            setSystolicIsvalid(false)
-        }
+            setSystolicIsvalid(false);
+        } 
     }
 
     //DIASTOLIC controls
@@ -55,7 +55,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
     const diastolicBlurChangeHandler = (e) => {
         if (diastolic.trim().length === 0) {
             setDiastolicIsValid(false);
-        }
+        } 
     }
     
     // PULSE controls
@@ -66,9 +66,9 @@ const PostForm = ({ onCancel, onAddPost }) => {
         }
     }
     const pulseBlurChangeHandler = (e) => {
-        if (diastolic.trim().length === 0) {
+        if (pulse.trim().length === 0) {
             setPulseIsValid(false);
-        }
+        } 
     }
 
     //DATE controls
@@ -79,9 +79,9 @@ const PostForm = ({ onCancel, onAddPost }) => {
         }
     }
     const dateBlurChangeHandler = (e) => {
-        if (diastolic.trim().length === 0) {
+        if (date.trim().length === 0) {
             setDateIsValid(false);
-        }
+        } 
     }
 
     // TIME controls
@@ -92,9 +92,9 @@ const PostForm = ({ onCancel, onAddPost }) => {
         }
     }
     const timeBlurChangeHandler = (e) => {
-        if (diastolic.trim().length === 0) {
+        if (time.trim().length === 0) {
             setTimeIsValid(false);
-        }
+        } 
     }
 
     //FEEL controls
@@ -105,9 +105,9 @@ const PostForm = ({ onCancel, onAddPost }) => {
         }
     }
     const feelBlurChangeHandler = (e) => {
-        if (diastolic.trim().length === 0) {
+        if (feel.trim().length === 0) {
             setFeelIsValid(false);
-        }
+        } 
     }
 
 
@@ -141,8 +141,8 @@ const PostForm = ({ onCancel, onAddPost }) => {
 
     return (
         <form onSubmit={submitHandler}>
-            <div className='controls'>
-                <div className={`control ${!systolicIsValid ? 'invalid' : ''}`}>
+            <div className={classes.controls}>
+                <div className={`${classes.control} ${!systolicIsValid && classes.invalid}`}>
                     <label htmlFor="systolic">Systolic</label>
                     <input
 
@@ -155,7 +155,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                         onBlur={systolicBlurChangeHandler}
                     />
                 </div>
-                <div className={`control ${!diastolicIsValid ? 'invalid' : ''}`}>
+                <div className={`${classes.control} ${!diastolicIsValid && classes.invalid}`}>
                     <label htmlFor="diastolic">Diastolic</label>
                     <input
                         type="text"
@@ -167,7 +167,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                         onBlur={diastolicBlurChangeHandler}
 />
                 </div>
-                <div className={`control ${!pulseIsValid ? 'invalid' : ''}`}>
+                <div className={`${classes.control} ${!pulseIsValid && classes.invalid}`}>
                     <label htmlFor="pulse">Pulse</label>
                     <input
                         type="text"
@@ -181,7 +181,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                 </div>
                 <div>
                     <p>When were the measurements taken?</p>
-                    <div className={`control ${!dateIsValid ? 'invalid' : ''}`}>
+                    <div className={`${classes.control} ${!dateIsValid && classes.invalid}`}>
                         <label htmlFor="date">Date</label>
                         <input
                             type="date"
@@ -192,7 +192,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                             onBlur={dateBlurChangeHandler}
                         />
                     </div>
-                    <div className={`control ${!timeIsValid ? 'invalid' : ''}`}>
+                    <div className={`${classes.control} ${!timeIsValid && classes.invalid}`}>
                         <label htmlFor="time">Time</label>
                         <input
                             type="time"
@@ -204,7 +204,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                         />
                     </div>
                 </div>
-                <div className={`control ${!feelIsValid ? 'invalid' : ''}`}>
+                <div className={`${classes.control} ${!feelIsValid && classes.invalid}`}>
                     <label htmlFor="feel">How do you feel?</label>
                     <textarea
                         name="feel"
