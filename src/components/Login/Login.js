@@ -2,7 +2,8 @@ import Card from '../UI/Card';
 import Button from '../UI/Button';
 import classes from './Login.module.css';
 import { validateEmail, validatePassword } from '../../utils/loginValidator';
-import { useEffect, useReducer, useState } from 'react';
+import { useContext, useEffect, useReducer, useState } from 'react';
+import AuthContext from '../../store/auth-context';
 
 const emailReducer = (state, action) => {
     if (action.type === 'USER_INPUT') {
@@ -25,17 +26,14 @@ const passwordReducer = (state, action) => {
 }
 
 const Login = () => {
-
+    const ctx = useContext(AuthContext);
+    
     const [formIsValid, setFormIsValid] = useState(false);
-
     const [emailState, dispatchEmail] = useReducer(emailReducer, { value: '', isValid: undefined });
     const [passwordState, dispatchPassword] = useReducer(passwordReducer, { value: '', isValid: undefined });
 
     useEffect(() => {
         const identifier = setTimeout(() => {
-            console.log(emailState.isValid)
-            console.log(passwordState.isValid)
-
             setFormIsValid(
                 emailState.isValid && passwordState.isValid
             );
@@ -43,7 +41,6 @@ const Login = () => {
         return () => {
             clearTimeout(identifier);
         }
-
     }, [emailState.isValid, passwordState.isValid]);
 
     const emailChangeHandler = (e) => {
@@ -64,9 +61,8 @@ const Login = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log(emailState, passwordState);
+        ctx.onLogin(emailState.value, passwordState.value)
     }
-
 
     return (
         <Card className={classes.login}>
@@ -80,7 +76,6 @@ const Login = () => {
                         onChange={emailChangeHandler}
                         onBlur={emailValidateHandler}
                     />
-
                 </div>
                 {emailState.isValid === false && <div
                     className={classes.control}>
@@ -95,14 +90,11 @@ const Login = () => {
                         onChange={passwordChangeHandler}
                         onBlur={passwordValidateHandler}
                     />
-
                 </div>
-
                 {passwordState.isValid === false && <div
                     className={classes.control}>
                     <p>Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
                 </div>}
-
                 <div className={classes.actions}>
                     <Button type="submit" className={classes.btn} disabled={!formIsValid}>Login</Button>
                 </div>

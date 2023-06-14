@@ -9,14 +9,14 @@ const PostForm = ({ onCancel, onAddPost }) => {
     const pulseInputRef = useRef();
     const dateInputRef = useRef();
     const timeInputRef = useRef();
-    const feelInputRef = useRef()
+    // const feelInputRef = useRef()
 
     const [systolicIsValid, setSystolicIsvalid] = useState(true);
     const [diastolicIsValid, setDiastolicIsValid] = useState(true);
     const [pulseIsValid, setPulseIsValid] = useState(true);
     const [dateIsValid, setDateIsValid] = useState(true);
     const [timeIsValid, setTimeIsValid] = useState(true);
-    const [feelIsValid, setFeelIsValid] = useState(true);
+    // const [feelIsValid, setFeelIsValid] = useState(true);
 
     const systolicBlurChangeHandler = (e) => {
         e.target.value.trim().length === 0 ? setSystolicIsvalid(false) : setSystolicIsvalid(true);
@@ -38,9 +38,9 @@ const PostForm = ({ onCancel, onAddPost }) => {
         e.target.value.trim().length === 0 ? setTimeIsValid(false) : setTimeIsValid(true);
     }
 
-    const feelBlurChangeHandler = (e) => {
-        e.target.value.trim().length === 0 ? setFeelIsValid(false) : setFeelIsValid(true);
-    }
+    // const feelBlurChangeHandler = (e) => {
+    //     e.target.value.trim().length === 0 ? setFeelIsValid(false) : setFeelIsValid(true);
+    // }
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -51,7 +51,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
             pulse: [pulseInputRef.current.value, setPulseIsValid],
             date: [dateInputRef.current.value, setDateIsValid],
             time: [timeInputRef.current.value, setTimeIsValid],
-            feel: [feelInputRef.current.value, setFeelIsValid]
+            // feel: [feelInputRef.current.value, setFeelIsValid]
         }
 
         let falseData = false;
@@ -71,7 +71,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
             pulse: +pulseInputRef.current.value,
             date: new Date(dateInputRef.current.value),
             time: timeInputRef.current.value.toString(),
-            feel: feelInputRef.current.value
+            // feel: feelInputRef.current.value
         })
     }
 
@@ -140,7 +140,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                         />
                     </div>
                 </div>
-                <div className={`${classes.control} ${!feelIsValid && classes.invalid}`}>
+                {/* <div className={`${classes.control} ${!feelIsValid && classes.invalid}`}>
                     <label htmlFor="feel">How do you feel?</label>
                     <textarea
                         name="feel"
@@ -151,7 +151,7 @@ const PostForm = ({ onCancel, onAddPost }) => {
                         placeholder="Please give a short recap of how you feel!"
                         ref={feelInputRef}
                     ></textarea>
-                </div>
+                </div> */}
                 <div className='actions'>
                     <Button type='button' onClick={onCancel} >Cancel</Button>
                     <Button type="submit">Submit</Button>
