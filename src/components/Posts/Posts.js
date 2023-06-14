@@ -53,6 +53,7 @@ const Posts = () => {
 
     return (
         <Card className={classes.posts}>
+            <h1>Keep track of your blood pressure!</h1>
             <NewPost onAddPost={addPostHandler} />
             {posts.length === 0 ?
                 <p>No posts yet!</p> :

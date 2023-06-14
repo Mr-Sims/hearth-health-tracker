@@ -4,12 +4,12 @@ import Button from "../UI/Button";
 
 
 const PostForm = ({ onCancel, onAddPost }) => {
-    const systolicInputRef = useRef('');
-    const diastolicInputRef = useRef('');
-    const pulseInputRef = useRef('');
-    const dateInputRef = useRef('');
-    const timeInputRef = useRef('');
-    const feelInputRef = useRef('')
+    const systolicInputRef = useRef();
+    const diastolicInputRef = useRef();
+    const pulseInputRef = useRef();
+    const dateInputRef = useRef();
+    const timeInputRef = useRef();
+    const feelInputRef = useRef()
 
     const [systolicIsValid, setSystolicIsvalid] = useState(true);
     const [diastolicIsValid, setDiastolicIsValid] = useState(true);
@@ -18,63 +18,51 @@ const PostForm = ({ onCancel, onAddPost }) => {
     const [timeIsValid, setTimeIsValid] = useState(true);
     const [feelIsValid, setFeelIsValid] = useState(true);
 
-    const validations = {
-        systolic: [systolicInputRef.current.value || '', setSystolicIsvalid],
-        diastolic: [diastolicInputRef.current.value || '', setDiastolicIsValid],
-        pulse: [pulseInputRef.current.value || '', setPulseIsValid],
-        date: [dateInputRef.current.value || '', setDateIsValid],
-        time: [timeInputRef.current.value || '', setTimeIsValid],
-        feel: [feelInputRef.current.value || '', setFeelIsValid]
-    }
-
-    // SYSTOLIC controls
     const systolicBlurChangeHandler = (e) => {
         e.target.value.trim().length === 0 ? setSystolicIsvalid(false) : setSystolicIsvalid(true);
     }
 
-    //DIASTOLIC controls
     const diastolicBlurChangeHandler = (e) => {
         e.target.value.trim().length === 0 ? setDiastolicIsValid(false) : setDiastolicIsValid(true)
     }
 
-    // PULSE controls
     const pulseBlurChangeHandler = (e) => {
-        e.target.value.trim().lenght === 0 ? setPulseIsValid(false) : setPulseIsValid(true);
+        e.target.value.trim().length === 0 ? setPulseIsValid(false) : setPulseIsValid(true);
     }
 
-    //DATE controls
     const dateBlurChangeHandler = (e) => {
-        e.target.value.trim().lenght === 0 ? setDateIsValid(false) : setDateIsValid(true);
+        e.target.value.trim().length === 0 ? setDateIsValid(false) : setDateIsValid(true);
     }
 
-    // TIME controls
     const timeBlurChangeHandler = (e) => {
-        e.target.value.trim().lenght === 0 ? setTimeIsValid(false) : setTimeIsValid(true);
+        e.target.value.trim().length === 0 ? setTimeIsValid(false) : setTimeIsValid(true);
     }
 
-    //FEEL controls
     const feelBlurChangeHandler = (e) => {
-        e.target.value.trim().lenght === 0 ? setFeelIsValid(false) : setFeelIsValid(true);
-
+        e.target.value.trim().length === 0 ? setFeelIsValid(false) : setFeelIsValid(true);
     }
 
     const submitHandler = (e) => {
         e.preventDefault();
 
-        for (let item in validations) {
-            if (validations[item][0].trim().length === 0) {
-                validations[item][1](false)
-            }
+        const validations = {
+            systolic: [systolicInputRef.current.value, setSystolicIsvalid],
+            diastolic: [diastolicInputRef.current.value, setDiastolicIsValid],
+            pulse: [pulseInputRef.current.value, setPulseIsValid],
+            date: [dateInputRef.current.value, setDateIsValid],
+            time: [timeInputRef.current.value, setTimeIsValid],
+            feel: [feelInputRef.current.value, setFeelIsValid]
         }
 
-        if (systolicInputRef.current.value.trim().length === 0 ||
-            diastolicInputRef.current.value.trim().length === 0 ||
-            pulseInputRef.current.value.trim().length === 0 ||
-            dateInputRef.current.value.trim().length === 0 ||
-            timeInputRef.current.value.trim().length === 0 ||
-            feelInputRef.current.value.trim().length === 0
-        ) {
-            return;
+        let falseData = false;
+        for (let item in validations) {
+            if (validations[item][0].trim().length === 0) {
+                validations[item][1](false);
+                falseData = true;
+            }
+        }
+        if (falseData) {
+            return
         }
 
         onAddPost({

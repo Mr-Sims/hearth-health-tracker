@@ -6,10 +6,10 @@ const conditionChecker = (systolic, diastolic) => {
     } else if (systolic >= 140 || diastolic >= 90) {
         condition = 'hypertensionTwo';
 
-    } else if ((systolic >= 130 && systolic < 139)  && (diastolic >= 80 && diastolic < 89)) {
+    } else if ((systolic >= 130 && systolic < 139)  || (diastolic > 85 && diastolic < 89)) {
         condition = 'hypertensionOne';
 
-    } else if ((systolic >= 120 && systolic < 129) &&  diastolic > 80) {
+    } else if ((systolic > 120 && systolic < 129) ||  (diastolic > 80 && diastolic <= 85)) {
         condition = 'elevated';
 
     } else if ((systolic > 90 && systolic <= 120) && (diastolic > 60 && diastolic <= 80)) {

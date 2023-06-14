@@ -1,6 +1,12 @@
 .posts {
   padding: 1rem;
-  margin: 0.5rem auto;
+  margin: 5rem auto 0 auto;
   width: 50rem;
   max-width: 95%;
+  background-color: rgb(179, 31, 31);
+  opacity: 0.9;
+}
+
+.posts h1 {
+  color: antiquewhite;
 }
