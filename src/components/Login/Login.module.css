@@ -47,8 +47,30 @@
   color: red
 }
 
+.control p {
+  font-size: 12px;
+  opacity: 0.6;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .actions {
   text-align: center;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: rgb(193, 92, 92);
+}
+
+.btn:disabled,
+.btn:focus:disabled,
+.btn:hover:disabled,
+.btn:active:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #666666;
+  cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
